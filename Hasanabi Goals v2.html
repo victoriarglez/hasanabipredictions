@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hasan's Goals & Predictions</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+body {
+    background-color: #262626 ;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #f1f1f1;
+}
+
+.container {
+    border-color: transparent!important;
+    background-color: #6441a5;
+}
+
+hr {
+    color: white;
+}
+
+.goal-item {
+    display: inline-block;
+    border: 1px solid #b9a3e3;
+    background-color: #b9a3e3;
+    color: #262626;
+    border-radius: 10px;
+    position: relative;
+    top: 0px;
+    padding: 10px;
+    margin: 10px;
+    width: fit-content;
+    transition: all .5s;
+}
+
+.goal-item:hover {
+    cursor: pointer;
+    position: relative;
+    top: -10px;
+    box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);
+    -webkit-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);
+    -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);;   
+}
+
+.goal-item.checked {
+    font-weight: bolder;
+    text-decoration: line-through;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container-fluid text-center p-5">
+        <h1>GOALS</h1>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>FITNESS GOALS</h2>
+        <p><span class="completed-fitness">0</span>/6</p>
+        <div id="fitness1" class="fitness goal-item">Midterm - Mantain less than 15% bodyfat.</div>
+        <div id="fitness2" class="fitness goal-item">Longterm - Put on more muscle mass</div>
+        <div id="fitness3" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM</div>
+        <div id="fitness4" class="fitness goal-item">DL: be able to 1RPM 555</div>
+        <div id="fitness5" class="fitness goal-item">S: 315x12</div>
+        <div id="fitness6" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM</div>
+        <hr>
+        <h2>BASKETBALL</h2>
+        <p><span class="completed-basketball">0</span>/6</p>
+        <div id="basketball1" class="basketball goal-item">increase vert bball</div>
+        <div id="basketball2" class="basketball goal-item">become more explosive</div>
+        <div id="basketball3" class="basketball goal-item">dunk consistently in a game</div>
+        <div id="basketball4" class="basketball goal-item">focus on recovery / strengthening lower body / avoid injuries</div>
+        <div id="basketball5" class="basketball goal-item">do combat sport (on stream)</div>
+        <div id="basketball6" class="basketball goal-item">dancing lessons w? other ccs (on stream)</div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>CONTENT GOALS</h2>
+        <p><span class="completed-content">0</span>/12</p>
+        <div id="content5" class="content goal-item">DREAMCON</div>
+        <div id="content4" class="content goal-item">smile more</div>
+        <div id="content3" class="content goal-item">lean into clip farming</div>
+        <div id="content7" class="content goal-item">learn to ride a motorcycle</div>
+        <div id="content8" class="content goal-item">more fun content on second channel (rebrand)</div>
+        <div id="content1" class="content goal-item">be more in tune w? viral things happening (tiktok)</div>
+        <div id="content12" class="content goal-item">dating games / scary games / more gaming / finish elden ring dlc</div>
+        <div id="content9" class="content goal-item">more tiktok exclusive content (unless its banned) (it wont be banned)</div>
+        <div id="content11" class="content goal-item">more community content: okbuddy 2x month chadvice monthly - pobox - dating profile review</div>
+        <div id="content6" class="content goal-item">more bball content fix shot with lethal shooter - basketball coaching w/ other content creators track racing</div>
+        <div id="content2" class="content goal-item">focus on more fun react content / more collabs / reshape community to have more diverse fun-tent bring back tv show react meta</div>
+        <div id="content10" class="content goal-item">get at least one high profile interview that seems insane (Luigi Mangione or the guy that shot Shinzo abe) swim with fishes to defeat your fears</div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>COLLAB GOALS</h2>
+        <p><span class="completed-collab">0</span>/8</p>
+        <div id="collab1" class="collab goal-item">cooking streams w/ qt</div>
+        <div id="collab2" class="collab goal-item">cosplay w/ emiru</div>
+        <div id="collab3" class="collab goal-item">travel stream w/ nick polom</div>
+        <div id="collab4" class="collab goal-item">maya zoo review + stavvy</div>
+        <div id="collab5" class="collab goal-item">jeff nippard</div>
+        <div id="collab6" class="collab goal-item">squeezie</div>
+        <div id="collab7" class="collab goal-item">caseoh</div>
+        <div id="collab8" class="collab goal-item">more fear& shared experiences</div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>TRAVEL GOALS</h2>
+        <p><span class="completed-travel">0</span>/7</p>
+        <div id="travel1" class="travel goal-item">Japan (japanuary)</div>
+        <div id="travel2" class="travel goal-item">China</div>
+        <div id="travel3" class="travel goal-item">Thailand</div>
+        <div id="travel4" class="travel goal-item">France</div>
+        <div id="travel5" class="travel goal-item">Vietnam</div>
+        <div id="travel6" class="travel goal-item">Korea</div>
+        <div id="travel7" class="travel goal-item">Canada</div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>KAYA GOALS</h2>
+        <p><span class="completed-kaya">0</span>/3</p>
+        <div id="kaya1" class="kaya goal-item">take kaya to experience snow for the first time</div>
+        <div id="kaya2" class="kaya goal-item">kaya 2nd birthday</div>
+        <div id="kaya3" class="kaya goal-item">kaya beach day</div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>LIFE GOALS</h2>
+        <p><span class="completed-life">0</span>/8</p>
+        <div id="life1" class="life goal-item">take more time off streaming (lol)</div>
+        <div id="life2" class="life goal-item">self care 1x month</div>
+        <div id="life3" class="life goal-item">get less angry at chatters</div>
+        <div id="life4" class="life goal-item">less focus on bait (unless its funny)</div>
+        <div id="life5" class="life goal-item">no more cursing!!!!!!!!!!!!!</div>
+        <div id="life7" class="life goal-item">hire a pa</div>
+        <div id="life8" class="life goal-item">get a new car</div>
+        <div id="life6" class="life goal-item">generate more positive vibes / have people be more charitable to you pr year continues!!!!!</div>
+    </div>
+
+    <hr>
+    <hr>
+    <hr>
+
+    <div class="container-fluid jumbotron text-center" style="padding: 200px;">
+        <h1>PREDICTIONS</h1>
+    </div>
+
+    <hr>
+    <hr>
+    <hr class="mb-5">
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <p><span class="completed-prediction">0</span>/20</p>
+        <div id="prediction1" class="prediction goal-item">GTA6 IS DELAYED</div>
+        <div id="prediction2" class="prediction goal-item">MARVEL RIVALS DEAD META Ow2 STYLE</div>
+        <div id="prediction3" class="prediction goal-item">TRUMP GETS BIBI TO SECURE HOSTAGE DEAL WHERE NORTH GAZA IS PERMANENTLY ANNEXED ONLY TO REUP + REARM ISRAEL AS IT INCREASES ITS HOSTILITIES IN WB TO PERMA ANNEX WB</div>
+        <div id="prediction4" class="prediction goal-item">AGGRESSIVE PROSECUTION IN DIRECT VIOLATION OF 1ST AMENDMENT OVER PRO PALESTINIAN SENTIMENT WORSE THAN EVEN BRANDON</div>
+        <div id="prediction5" class="prediction goal-item">MAMALA WRITES HER BOOK, IT SUCKS EVERYONE MAKES FUN OF HER (CAREER OVER)</div>
+        <div id="prediction6" class="prediction goal-item">NO LIB RESISTANCE THIS TIME. TRUMP AND TRUMPIAN FAR RIGHT POLITICS ARE NOW THE NORM. -INSTUTIONS THAT PREVIOUSLY WOULD PRESENT THEMSELVES AS LIBERAL, NOW BEHAVE OPENLY AND OUTWARDLY RW</div>
+        <div id="prediction7" class="prediction goal-item">TRUMP ELON FALLOUT CRASH AND BURN</div>
+        <div id="prediction8" class="prediction goal-item">THIN SKINNED. CHINA (ELONS CONNECTION TO CHINA)</div>
+        <div id="prediction9" class="prediction goal-item">MASS DEPORTATION INIATIVES ARE STARTED, BUT NEVER REACH THE NUMBERS TRUMP PROMISES SINCE ITS QUITE NEGATIVELY IMPACTFUL ON THE ECONOMY</div>
+        <div id="prediction10" class="prediction goal-item">MORE CELEBRITIES ARE OPENLY TRUMP</div>
+        <div id="prediction11" class="prediction goal-item">TIKTOK DOESNT GET BANNED</div>
+        <div id="prediction12" class="prediction goal-item">BB DOESNT GET LOCKED UP BY THE ICC TRUMP WILL GO TO GREAT LENGTHS TO PROTECT ISRAEL</div>
+        <div id="prediction13" class="prediction goal-item">TRUMP SUCKS, WILL CAUSE THE RIGHT WING CONTENT MARKET TO CONT GROWING BUT WILL SET THE STAGE FOR THEIR INEVITABLE DEMISE</div>
+        <div id="prediction14" class="prediction goal-item">AT LEAST 1 MASSIVELY CONSQUENTIAL NATURAL DISASTER</div>
+        <div id="prediction15" class="prediction goal-item">WE ARE FULLY GEARING UP FOR WAR WITH CHINA! LIBERALS WHO PREVIOUSLY CRITIQUED TRUMP WILL DEFEND HIM ON HIS INITIAVES IN THIS DIRECTION</div>
+        <div id="prediction16" class="prediction goal-item">
+            <p>DEPENDING ON HOW EU REACTS, EITHER AMERICAN HEGEMONY IS PERMANENTLY SHATTERED, OR OF CHINA CAUSE THE EU TO ALSO TREAT TRUMP LIKE A SAVIOR.</p>
+        </div>
+        <div id="prediction17" class="prediction goal-item-w-list">
+            <h3>THEIR FEARS</h3>
+            <div id="prediction171" class="prediction goal-item">PP VICTORY FOR CANADA</div>
+            <div id="prediction172" class="prediction goal-item">EUROPE FAR RIGHT SWING CONTINUES</div>
+            <div id="prediction173" class="prediction goal-item">CANADA WILL NOT BE ANNEXED INTO THE US</div>
+            <div id="prediction174" class="prediction goal-item">SECURITY AGGREEMENTS OVER PANAMA AND MAYBE GREENLAND (NO ANNEXATION)</div>
+        </div>
+    </div>
+
+    <div class="container p-5 mb-5 text-center border rounded">
+        <h2>PACKWATCH</h2>
+        <p><span class="completed-pack">0</span>/4</p>
+        <div id="pack1" class="pack goal-item">RFK DIES IN A VERY WEIRD WAY WHERE IT TAKES A LONG TIME TO FIGURE OUT WHAT DID IT (JOKE PREDICTION)</div>
+        <div id="pack1" class="pack goal-item">JOE BRANDON</div>
+        <div id="pack1" class="pack goal-item">NANCY PELOSI</div>
+        <div id="pack1" class="pack goal-item">MITCH MCCONNEL (ALREADY DEAD)</div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
+    <script>
+$(".goal-item").click(function(){
+    $(this).toggleClass("checked");
+
+    let category = $(this).prop("id").replace(/\d/g,'');
+    let count = $(".checked." + category).length;
+
+    $(".completed-" + category).html(count);
+});
+    </script>
+</body>
+</html>
