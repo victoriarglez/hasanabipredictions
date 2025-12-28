@@ -6,34 +6,132 @@
     <title>Hasan's Goals & Predictions</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Delius&family=Notable&family=Poller+One&display=swap" rel="stylesheet">
     <style>
+/* 
+
+Purple: #6441a5;
+Violet: #b9a3e3;
+Black: #262626;
+White: #f1f1f1;
+
+*/
+
+:root {
+    counter-reset: fitnessCounter basketballCounter contentCounter collabCounter travelCounter kayaCounter lifeCounter predictionCounter packwatchCounter;
+}
+
+.fitnessCB:checked {
+    counter-increment: fitnessCounter;
+}
+
+.fitness-counter::after {
+    content: counter(fitnessCounter);
+}
+
+.basketballCB:checked {
+    counter-increment: basketballCounter;
+}
+
+.basketball-counter::after {
+    content: counter(basketballCounter);
+}
+
+.contentCB:checked {
+    counter-increment: contentCounter;
+}
+
+.content-counter::after {
+    content: counter(contentCounter);
+}
+
+.collabCB:checked {
+    counter-increment: collabCounter;
+}
+
+.collab-counter::after {
+    content: counter(collabCounter);
+}
+
+.travelCB:checked {
+    counter-increment: travelCounter;
+}
+
+.travel-counter::after {
+    content: counter(travelCounter);
+}
+
+.kayaCB:checked {
+    counter-increment: kayaCounter;
+}
+
+.kaya-counter::after {
+    content: counter(kayaCounter);
+}
+
+.lifeCB:checked {
+    counter-increment: lifeCounter;
+}
+
+.life-counter::after {
+    content: counter(lifeCounter);
+}
+
+.predictionCB:checked {
+    counter-increment: predictionCounter;
+}
+
+.prediction-counter::after {
+    content: counter(predictionCounter);
+}
+
+.packwatchCB:checked {
+    counter-increment: packwatchCounter;
+}
+
+.packwatch-counter::after {
+    content: counter(packwatchCounter);
+}
+
+/* STYLES */
 body {
-    background-color: #262626 ;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: black;
     color: #f1f1f1;
+    font-family: "Delius", cursive;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .container {
-    border-color: transparent!important;
     background-color: #6441a5;
+    margin-bottom: 10rem;
 }
 
-hr {
-    color: white;
-}
-
-.goal-item {
-    display: inline-block;
-    border: 1px solid #b9a3e3;
+.section-header {
+    position: absolute;
     background-color: #b9a3e3;
     color: #262626;
     border-radius: 10px;
-    position: relative;
-    top: 0px;
     padding: 10px;
-    margin: 10px;
-    width: fit-content;
+    transform: translate(-10rem);
+    min-width: 15rem;
+    max-width: fit-content;
+    min-height: 5rem;
+    border: 5px solid black;
+}
+
+.goal-item {
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #262626;
+    top: 0;
     transition: all .5s;
+}
+
+label:has(.goal-item) {
+    margin: 20px;
 }
 
 .goal-item:hover {
@@ -42,13 +140,33 @@ hr {
     top: -10px;
     box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);
     -webkit-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);
-    -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);;   
+    -moz-box-shadow: 0px 10px 14px -7px rgba(0,0,0,0.50);
 }
 
-.goal-item.checked {
-    font-weight: bolder;
+input {
+    opacity: 0;
+    position: absolute;
+}
+
+input:checked + label > .goal-item {
+    background-color: #14a71d;
     text-decoration: line-through;
 }
+
+h1 {
+  font-family: "Notable", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 5rem;
+}
+
+h2, h3 {
+  font-family: "Poller One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
 
     </style>
 </head>
@@ -57,151 +175,161 @@ hr {
         <h1>GOALS</h1>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>FITNESS GOALS</h2>
-        <p><span class="completed-fitness">0</span>/6</p>
-        <div id="fitness1" class="fitness goal-item">Midterm - Mantain less than 15% bodyfat.</div>
-        <div id="fitness2" class="fitness goal-item">Longterm - Put on more muscle mass</div>
-        <div id="fitness3" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM</div>
-        <div id="fitness4" class="fitness goal-item">DL: be able to 1RPM 555</div>
-        <div id="fitness5" class="fitness goal-item">S: 315x12</div>
-        <div id="fitness6" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM</div>
-        <hr>
-        <h2>BASKETBALL</h2>
-        <p><span class="completed-basketball">0</span>/6</p>
-        <div id="basketball1" class="basketball goal-item">increase vert bball</div>
-        <div id="basketball2" class="basketball goal-item">become more explosive</div>
-        <div id="basketball3" class="basketball goal-item">dunk consistently in a game</div>
-        <div id="basketball4" class="basketball goal-item">focus on recovery / strengthening lower body / avoid injuries</div>
-        <div id="basketball5" class="basketball goal-item">do combat sport (on stream)</div>
-        <div id="basketball6" class="basketball goal-item">dancing lessons w? other ccs (on stream)</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="fitness1" id="cb_fitness1" class="fitnessCB">
+        <label for="cb_fitness1"><div id="fitness1" class="fitness goal-item">Midterm - Mantain less than 15% bodyfat.</div></label>
+        <input type="checkbox" name="fitness2" id="cb_fitness2" class="fitnessCB">
+        <label for="cb_fitness2"><div id="fitness2" class="fitness goal-item">Longterm - Put on more muscle mass</div></label>
+        <input type="checkbox" name="fitness3" id="cb_fitness3" class="fitnessCB">
+        <label for="cb_fitness3"><div id="fitness3" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM</div></label>
+        <input type="checkbox" name="fitness4" id="cb_fitness4" class="fitnessCB">
+        <label for="cb_fitness4"><div id="fitness4" class="fitness goal-item">DL: be able to 1RPM 555</div></label>
+        <input type="checkbox" name="fitness5" id="cb_fitness5" class="fitnessCB">
+        <label for="cb_fitness5"><div id="fitness5" class="fitness goal-item">S: 315x12</div></label>
+        <input type="checkbox" name="fitness6" id="cb_fitness6" class="fitnessCB">
+        <label for="cb_fitness6"><div id="fitness6" class="fitness goal-item">BP - be able to 2251b 15 times 315 1RM </div></label>
+        <div class="section-header">
+            <h2>FITNESS GOALS</h2>
+            <span class="fitness-counter"></span>/6
+        </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>CONTENT GOALS</h2>
-        <p><span class="completed-content">0</span>/12</p>
-        <div id="content5" class="content goal-item">DREAMCON</div>
-        <div id="content4" class="content goal-item">smile more</div>
-        <div id="content3" class="content goal-item">lean into clip farming</div>
-        <div id="content7" class="content goal-item">learn to ride a motorcycle</div>
-        <div id="content8" class="content goal-item">more fun content on second channel (rebrand)</div>
-        <div id="content1" class="content goal-item">be more in tune w? viral things happening (tiktok)</div>
-        <div id="content12" class="content goal-item">dating games / scary games / more gaming / finish elden ring dlc</div>
-        <div id="content9" class="content goal-item">more tiktok exclusive content (unless its banned) (it wont be banned)</div>
-        <div id="content11" class="content goal-item">more community content: okbuddy 2x month chadvice monthly - pobox - dating profile review</div>
-        <div id="content6" class="content goal-item">more bball content fix shot with lethal shooter - basketball coaching w/ other content creators track racing</div>
-        <div id="content2" class="content goal-item">focus on more fun react content / more collabs / reshape community to have more diverse fun-tent bring back tv show react meta</div>
-        <div id="content10" class="content goal-item">get at least one high profile interview that seems insane (Luigi Mangione or the guy that shot Shinzo abe) swim with fishes to defeat your fears</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="basketball1" id="cb_basketball1" class="basketballCB">
+        <label for="cb_basketball1"><div id="basketball1" class="basketball goal-item">increase vert bball</div></label>
+        <input type="checkbox" name="basketball2" id="cb_basketball2" class="basketballCB">
+        <label for="cb_basketball2"><div id="basketball2" class="basketball goal-item">become more explosive</div></label>
+        <input type="checkbox" name="basketball3" id="cb_basketball3" class="basketballCB">
+        <label for="cb_basketball3"><div id="basketball3" class="basketball goal-item">dunk consistently in a game</div></label>
+        <input type="checkbox" name="basketball4" id="cb_basketball4" class="basketballCB">
+        <label for="cb_basketball4"><div id="basketball4" class="basketball goal-item">focus on recovery / strengthening lower body / avoid injuries</div></label>
+        <input type="checkbox" name="basketball5" id="cb_basketball5" class="basketballCB">
+        <label for="cb_basketball5"><div id="basketball5" class="basketball goal-item">do combat sport (on stream)</div></label>
+        <input type="checkbox" name="basketball6" id="cb_basketball6" class="basketballCB">
+        <label for="cb_basketball6"><div id="basketball6" class="basketball goal-item">dancing lessons w? other ccs (on stream)</div></label>
+        <div class="section-header">
+            <h2>BASKETBALL GOALS</h2>
+            <span class="basketball-counter"></span>/6
+        </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>COLLAB GOALS</h2>
-        <p><span class="completed-collab">0</span>/8</p>
-        <div id="collab1" class="collab goal-item">cooking streams w/ qt</div>
-        <div id="collab2" class="collab goal-item">cosplay w/ emiru</div>
-        <div id="collab3" class="collab goal-item">travel stream w/ nick polom</div>
-        <div id="collab4" class="collab goal-item">maya zoo review + stavvy</div>
-        <div id="collab5" class="collab goal-item">jeff nippard</div>
-        <div id="collab6" class="collab goal-item">squeezie</div>
-        <div id="collab7" class="collab goal-item">caseoh</div>
-        <div id="collab8" class="collab goal-item">more fear& shared experiences</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="content1" id="cb_content1" class="contentCB"><label for="cb_content1"><div id="content1" class="content goal-item">DREAMCON</div></label>
+        <input type="checkbox" name="content2" id="cb_content2" class="contentCB"><label for="cb_content2"><div id="content2" class="content goal-item">smile more</div></label>
+        <input type="checkbox" name="content3" id="cb_content3" class="contentCB"><label for="cb_content3"><div id="content3" class="content goal-item">lean into clip farming</div></label>
+        <input type="checkbox" name="content4" id="cb_content4" class="contentCB"><label for="cb_content4"><div id="content4" class="content goal-item">learn to ride a motorcycle</div></label>
+        <input type="checkbox" name="content5" id="cb_content5" class="contentCB"><label for="cb_content5"><div id="content5" class="content goal-item">more fun content on second channel (rebrand)</div></label>
+        <input type="checkbox" name="content6" id="cb_content6" class="contentCB"><label for="cb_content6"><div id="content6" class="content goal-item">be more in tune w? viral things happening (tiktok)</div></label>
+        <input type="checkbox" name="content7" id="cb_content7" class="contentCB"><label for="cb_content7"><div id="content7" class="content goal-item">dating games / scary games / more gaming / finish elden ring dlc</div></label>
+        <input type="checkbox" name="content8" id="cb_content8" class="contentCB"><label for="cb_content8"><div id="content8" class="content goal-item">more tiktok exclusive content (unless its banned) (it wont be banned)</div></label>
+        <input type="checkbox" name="content9" id="cb_content9" class="contentCB"><label for="cb_content9"><div id="content9" class="content goal-item">more community content: okbuddy 2x month chadvice monthly - pobox - dating profile review</div></label>
+        <input type="checkbox" name="content10" id="cb_content10" class="contentCB"><label for="cb_content10"><div id="content10" class="content goal-item">more bball content fix shot with lethal shooter - basketball coaching w/ other content creators track racing</div></label>
+        <input type="checkbox" name="content11" id="cb_content11" class="contentCB"><label for="cb_content11"><div id="content11" class="content goal-item">focus on more fun react content / more collabs / reshape community to have more diverse fun-tent bring back tv show react meta</div></label>
+        <input type="checkbox" name="content12" id="cb_content12" class="contentCB"><label for="cb_content12"><div id="content12" class="content goal-item">get at least one high profile interview that seems insane (Luigi Mangione or the guy that shot Shinzo abe) swim with fishes to defeat your fears</div></label>
+        <div class="section-header">
+            <h2>CONTENT GOALS</h2>
+            <span class="content-counter"></span>/12
+        </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>TRAVEL GOALS</h2>
-        <p><span class="completed-travel">0</span>/7</p>
-        <div id="travel1" class="travel goal-item">Japan (japanuary)</div>
-        <div id="travel2" class="travel goal-item">China</div>
-        <div id="travel3" class="travel goal-item">Thailand</div>
-        <div id="travel4" class="travel goal-item">France</div>
-        <div id="travel5" class="travel goal-item">Vietnam</div>
-        <div id="travel6" class="travel goal-item">Korea</div>
-        <div id="travel7" class="travel goal-item">Canada</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="collab1" id="cb_collab1" class="collabCB"><label for="cb_collab1"><div id="collab1" class="collab goal-item">cooking streams w/ qt</div></label>
+        <input type="checkbox" name="collab2" id="cb_collab2" class="collabCB"><label for="cb_collab2"><div id="collab2" class="collab goal-item">cosplay w/ emiru</div></label>
+        <input type="checkbox" name="collab3" id="cb_collab3" class="collabCB"><label for="cb_collab3"><div id="collab3" class="collab goal-item">travel stream w/ nick polom</div></label>
+        <input type="checkbox" name="collab4" id="cb_collab4" class="collabCB"><label for="cb_collab4"><div id="collab4" class="collab goal-item">maya zoo review + stavvy</div></label>
+        <input type="checkbox" name="collab5" id="cb_collab5" class="collabCB"><label for="cb_collab5"><div id="collab5" class="collab goal-item">jeff nippard</div></label>
+        <input type="checkbox" name="collab6" id="cb_collab6" class="collabCB"><label for="cb_collab6"><div id="collab6" class="collab goal-item">squeezie</div></label>
+        <input type="checkbox" name="collab7" id="cb_collab7" class="collabCB"><label for="cb_collab7"><div id="collab7" class="collab goal-item">caseoh</div></label>
+        <input type="checkbox" name="collab8" id="cb_collab8" class="collabCB"><label for="cb_collab8"><div id="collab8" class="collab goal-item">more fear& shared experiences</div></label>
+        <div class="section-header">
+            <h2>COLLAB GOALS</h2>
+            <span class="collab-counter"></span>/8
+        </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>KAYA GOALS</h2>
-        <p><span class="completed-kaya">0</span>/3</p>
-        <div id="kaya1" class="kaya goal-item">take kaya to experience snow for the first time</div>
-        <div id="kaya2" class="kaya goal-item">kaya 2nd birthday</div>
-        <div id="kaya3" class="kaya goal-item">kaya beach day</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="travel1" id="cb_travel1" class="travelCB"><label for="cb_travel1"><div id="travel1" class="travel goal-item">Japan (japanuary)</div></label>
+        <input type="checkbox" name="travel2" id="cb_travel2" class="travelCB"><label for="cb_travel2"><div id="travel2" class="travel goal-item">China</div></label>
+        <input type="checkbox" name="travel3" id="cb_travel3" class="travelCB"><label for="cb_travel3"><div id="travel3" class="travel goal-item">Thailand</div></label>
+        <input type="checkbox" name="travel4" id="cb_travel4" class="travelCB"><label for="cb_travel4"><div id="travel4" class="travel goal-item">France</div></label>
+        <input type="checkbox" name="travel5" id="cb_travel5" class="travelCB"><label for="cb_travel5"><div id="travel5" class="travel goal-item">Vietnam</div></label>
+        <input type="checkbox" name="travel6" id="cb_travel6" class="travelCB"><label for="cb_travel6"><div id="travel6" class="travel goal-item">Korea</div></label>
+        <input type="checkbox" name="travel7" id="cb_travel7" class="travelCB"><label for="cb_travel7"><div id="travel7" class="travel goal-item">Canada</div></label>
+        <div class="section-header">
+            <h2>TRAVEL GOALS</h2>
+            <span class="travel-counter"></span>/7
+        </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>LIFE GOALS</h2>
-        <p><span class="completed-life">0</span>/8</p>
-        <div id="life1" class="life goal-item">take more time off streaming (lol)</div>
-        <div id="life2" class="life goal-item">self care 1x month</div>
-        <div id="life3" class="life goal-item">get less angry at chatters</div>
-        <div id="life4" class="life goal-item">less focus on bait (unless its funny)</div>
-        <div id="life5" class="life goal-item">no more cursing!!!!!!!!!!!!!</div>
-        <div id="life7" class="life goal-item">hire a pa</div>
-        <div id="life8" class="life goal-item">get a new car</div>
-        <div id="life6" class="life goal-item">generate more positive vibes / have people be more charitable to you pr year continues!!!!!</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="kaya1" id="cb_kaya1" class="kayaCB"><label for="cb_kaya1"><div id="kaya1" class="kaya goal-item">take kaya to experience snow for the first time</div></label>
+        <input type="checkbox" name="kaya2" id="cb_kaya2" class="kayaCB"><label for="cb_kaya2"><div id="kaya2" class="kaya goal-item">kaya 2nd birthday</div></label>
+        <input type="checkbox" name="kaya3" id="cb_kaya3" class="kayaCB"><label for="cb_kaya3"><div id="kaya3" class="kaya goal-item">kaya beach day</div></label>
+        <div class="section-header">
+            <h2>KAYA GOALS</h2>
+            <span class="kaya-counter"></span>/3
+        </div>
     </div>
 
-    <hr>
-    <hr>
-    <hr>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="life1" id="cb_life1" class="lifeCB"><label for="cb_life1"><div id="life1" class="life goal-item">take more time off streaming (lol)</div></label>
+        <input type="checkbox" name="life2" id="cb_life2" class="lifeCB"><label for="cb_life2"><div id="life2" class="life goal-item">self care 1x month</div></label>
+        <input type="checkbox" name="life3" id="cb_life3" class="lifeCB"><label for="cb_life3"><div id="life3" class="life goal-item">get less angry at chatters</div></label>
+        <input type="checkbox" name="life4" id="cb_life4" class="lifeCB"><label for="cb_life4"><div id="life4" class="life goal-item">less focus on bait (unless its funny)</div></label>
+        <input type="checkbox" name="life5" id="cb_life5" class="lifeCB"><label for="cb_life5"><div id="life5" class="life goal-item">no more cursing!!!!!!!!!!!!!</div></label>
+        <input type="checkbox" name="life6" id="cb_life6" class="lifeCB"><label for="cb_life6"><div id="life6" class="life goal-item">hire a pa</div></label>
+        <input type="checkbox" name="life7" id="cb_life7" class="lifeCB"><label for="cb_life7"><div id="life7" class="life goal-item">get a new car</div></label>
+        <input type="checkbox" name="life8" id="cb_life8" class="lifeCB"><label for="cb_life8"><div id="life8" class="life goal-item">generate more positive vibes / have people be more charitable to you pr year continues!!!!!</div></label>
+        <div class="section-header">
+            <h2>LIFE GOALS</h2>
+            <span class="life-counter"></span>/8
+        </div>
+    </div>
 
     <div class="container-fluid jumbotron text-center" style="padding: 200px;">
         <h1>PREDICTIONS</h1>
     </div>
 
-    <hr>
-    <hr>
-    <hr class="mb-5">
-
-    <div class="container p-5 mb-5 text-center border rounded">
-        <p><span class="completed-prediction">0</span>/20</p>
-        <div id="prediction1" class="prediction goal-item">GTA6 IS DELAYED</div>
-        <div id="prediction2" class="prediction goal-item">MARVEL RIVALS DEAD META Ow2 STYLE</div>
-        <div id="prediction3" class="prediction goal-item">TRUMP GETS BIBI TO SECURE HOSTAGE DEAL WHERE NORTH GAZA IS PERMANENTLY ANNEXED ONLY TO REUP + REARM ISRAEL AS IT INCREASES ITS HOSTILITIES IN WB TO PERMA ANNEX WB</div>
-        <div id="prediction4" class="prediction goal-item">AGGRESSIVE PROSECUTION IN DIRECT VIOLATION OF 1ST AMENDMENT OVER PRO PALESTINIAN SENTIMENT WORSE THAN EVEN BRANDON</div>
-        <div id="prediction5" class="prediction goal-item">MAMALA WRITES HER BOOK, IT SUCKS EVERYONE MAKES FUN OF HER (CAREER OVER)</div>
-        <div id="prediction6" class="prediction goal-item">NO LIB RESISTANCE THIS TIME. TRUMP AND TRUMPIAN FAR RIGHT POLITICS ARE NOW THE NORM. -INSTUTIONS THAT PREVIOUSLY WOULD PRESENT THEMSELVES AS LIBERAL, NOW BEHAVE OPENLY AND OUTWARDLY RW</div>
-        <div id="prediction7" class="prediction goal-item">TRUMP ELON FALLOUT CRASH AND BURN</div>
-        <div id="prediction8" class="prediction goal-item">THIN SKINNED. CHINA (ELONS CONNECTION TO CHINA)</div>
-        <div id="prediction9" class="prediction goal-item">MASS DEPORTATION INIATIVES ARE STARTED, BUT NEVER REACH THE NUMBERS TRUMP PROMISES SINCE ITS QUITE NEGATIVELY IMPACTFUL ON THE ECONOMY</div>
-        <div id="prediction10" class="prediction goal-item">MORE CELEBRITIES ARE OPENLY TRUMP</div>
-        <div id="prediction11" class="prediction goal-item">TIKTOK DOESNT GET BANNED</div>
-        <div id="prediction12" class="prediction goal-item">BB DOESNT GET LOCKED UP BY THE ICC TRUMP WILL GO TO GREAT LENGTHS TO PROTECT ISRAEL</div>
-        <div id="prediction13" class="prediction goal-item">TRUMP SUCKS, WILL CAUSE THE RIGHT WING CONTENT MARKET TO CONT GROWING BUT WILL SET THE STAGE FOR THEIR INEVITABLE DEMISE</div>
-        <div id="prediction14" class="prediction goal-item">AT LEAST 1 MASSIVELY CONSQUENTIAL NATURAL DISASTER</div>
-        <div id="prediction15" class="prediction goal-item">WE ARE FULLY GEARING UP FOR WAR WITH CHINA! LIBERALS WHO PREVIOUSLY CRITIQUED TRUMP WILL DEFEND HIM ON HIS INITIAVES IN THIS DIRECTION</div>
-        <div id="prediction16" class="prediction goal-item">
-            <p>DEPENDING ON HOW EU REACTS, EITHER AMERICAN HEGEMONY IS PERMANENTLY SHATTERED, OR OF CHINA CAUSE THE EU TO ALSO TREAT TRUMP LIKE A SAVIOR.</p>
-        </div>
-        <div id="prediction17" class="prediction goal-item-w-list">
-            <h3>THEIR FEARS</h3>
-            <div id="prediction171" class="prediction goal-item">PP VICTORY FOR CANADA</div>
-            <div id="prediction172" class="prediction goal-item">EUROPE FAR RIGHT SWING CONTINUES</div>
-            <div id="prediction173" class="prediction goal-item">CANADA WILL NOT BE ANNEXED INTO THE US</div>
-            <div id="prediction174" class="prediction goal-item">SECURITY AGGREEMENTS OVER PANAMA AND MAYBE GREENLAND (NO ANNEXATION)</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="prediction1" id="cb_prediction1" class="predictionCB"><label for="cb_prediction1"><div id="prediction1" class="prediction goal-item">GTA6 IS DELAYED</div></label>
+        <input type="checkbox" name="prediction2" id="cb_prediction2" class="predictionCB"><label for="cb_prediction2"><div id="prediction2" class="prediction goal-item">MARVEL RIVALS DEAD META Ow2 STYLE</div></label>
+        <input type="checkbox" name="prediction3" id="cb_prediction3" class="predictionCB"><label for="cb_prediction3"><div id="prediction3" class="prediction goal-item">TRUMP GETS BIBI TO SECURE HOSTAGE DEAL WHERE NORTH GAZA IS PERMANENTLY ANNEXED ONLY TO REUP + REARM ISRAEL AS IT INCREASES ITS HOSTILITIES IN WB TO PERMA ANNEX WB</div></label>
+        <input type="checkbox" name="prediction4" id="cb_prediction4" class="predictionCB"><label for="cb_prediction4"><div id="prediction4" class="prediction goal-item">AGGRESSIVE PROSECUTION IN DIRECT VIOLATION OF 1ST AMENDMENT OVER PRO PALESTINIAN SENTIMENT WORSE THAN EVEN BRANDON</div></label>
+        <input type="checkbox" name="prediction5" id="cb_prediction5" class="predictionCB"><label for="cb_prediction5"><div id="prediction5" class="prediction goal-item">MAMALA WRITES HER BOOK, IT SUCKS EVERYONE MAKES FUN OF HER (CAREER OVER)</div></label>
+        <input type="checkbox" name="prediction6" id="cb_prediction6" class="predictionCB"><label for="cb_prediction6"><div id="prediction6" class="prediction goal-item">NO LIB RESISTANCE THIS TIME. TRUMP AND TRUMPIAN FAR RIGHT POLITICS ARE NOW THE NORM. -INSTUTIONS THAT PREVIOUSLY WOULD PRESENT THEMSELVES AS LIBERAL, NOW BEHAVE OPENLY AND OUTWARDLY RW</div></label>
+        <input type="checkbox" name="prediction7" id="cb_prediction7" class="predictionCB"><label for="cb_prediction7"><div id="prediction7" class="prediction goal-item">TRUMP ELON FALLOUT CRASH AND BURN</div></label>
+        <input type="checkbox" name="prediction8" id="cb_prediction8" class="predictionCB"><label for="cb_prediction8"><div id="prediction8" class="prediction goal-item">THIN SKINNED. CHINA (ELONS CONNECTION TO CHINA)</div></label>
+        <input type="checkbox" name="prediction9" id="cb_prediction9" class="predictionCB"><label for="cb_prediction9"><div id="prediction9" class="prediction goal-item">MASS DEPORTATION INIATIVES ARE STARTED, BUT NEVER REACH THE NUMBERS TRUMP PROMISES SINCE ITS QUITE NEGATIVELY IMPACTFUL ON THE ECONOMY</div></label>
+        <input type="checkbox" name="prediction10" id="cb_prediction10" class="predictionCB"><label for="cb_prediction10"><div id="prediction10" class="prediction goal-item">MORE CELEBRITIES ARE OPENLY TRUMP</div></label>
+        <input type="checkbox" name="prediction11" id="cb_prediction11" class="predictionCB"><label for="cb_prediction11"><div id="prediction11" class="prediction goal-item">TIKTOK DOESNT GET BANNED</div></label>
+        <input type="checkbox" name="prediction12" id="cb_prediction12" class="predictionCB"><label for="cb_prediction12"><div id="prediction12" class="prediction goal-item">BB DOESNT GET LOCKED UP BY THE ICC TRUMP WILL GO TO GREAT LENGTHS TO PROTECT ISRAEL</div></label>
+        <input type="checkbox" name="prediction13" id="cb_prediction13" class="predictionCB"><label for="cb_prediction13"><div id="prediction13" class="prediction goal-item">TRUMP SUCKS, WILL CAUSE THE RIGHT WING CONTENT MARKET TO CONT GROWING BUT WILL SET THE STAGE FOR THEIR INEVITABLE DEMISE</div></label>
+        <input type="checkbox" name="prediction14" id="cb_prediction14" class="predictionCB"><label for="cb_prediction14"><div id="prediction14" class="prediction goal-item">AT LEAST 1 MASSIVELY CONSQUENTIAL NATURAL DISASTER</div></label>
+        <input type="checkbox" name="prediction15" id="cb_prediction15" class="predictionCB"><label for="cb_prediction15"><div id="prediction15" class="prediction goal-item">WE ARE FULLY GEARING UP FOR WAR WITH CHINA! LIBERALS WHO PREVIOUSLY CRITIQUED TRUMP WILL DEFEND HIM ON HIS INITIAVES IN THIS DIRECTION</div></label>
+        <input type="checkbox" name="prediction16" id="cb_prediction16" class="predictionCB"><label for="cb_prediction16"><div id="prediction16" class="prediction goal-item">DEPENDING ON HOW EU REACTS, EITHER AMERICAN HEGEMONY IS PERMANENTLY SHATTERED, OR OF CHINA CAUSE THE EU TO ALSO TREAT TRUMP LIKE A SAVIOR.</div></label>
+        <h3>THEIR FEARS</h3>
+        <input type="checkbox" name="prediction17" id="cb_prediction17" class="predictionCB"><label for="cb_prediction17"><div id="prediction17" class="prediction goal-item">PP VICTORY FOR CANADA</div></label>
+        <input type="checkbox" name="prediction18" id="cb_prediction18" class="predictionCB"><label for="cb_prediction18"><div id="prediction18" class="prediction goal-item">EUROPE FAR RIGHT SWING CONTINUES</div></label>
+        <input type="checkbox" name="prediction19" id="cb_prediction19" class="predictionCB"><label for="cb_prediction19"><div id="prediction19" class="prediction goal-item">CANADA WILL NOT BE ANNEXED INTO THE US</div></label>
+        <input type="checkbox" name="prediction20" id="cb_prediction20" class="predictionCB"><label for="cb_prediction20"><div id="prediction20" class="prediction goal-item">SECURITY AGGREEMENTS OVER PANAMA AND MAYBE GREENLAND (NO ANNEXATION)</div></label>
+        <div class="section-header">
+            <span class="prediction-counter" style="margin-top: .80rem;display:inline-block;"></span>/20
         </div>
     </div>
 
-    <div class="container p-5 mb-5 text-center border rounded">
-        <h2>PACKWATCH</h2>
-        <p><span class="completed-pack">0</span>/4</p>
-        <div id="pack1" class="pack goal-item">RFK DIES IN A VERY WEIRD WAY WHERE IT TAKES A LONG TIME TO FIGURE OUT WHAT DID IT (JOKE PREDICTION)</div>
-        <div id="pack1" class="pack goal-item">JOE BRANDON</div>
-        <div id="pack1" class="pack goal-item">NANCY PELOSI</div>
-        <div id="pack1" class="pack goal-item">MITCH MCCONNEL (ALREADY DEAD)</div>
+    <div class="container p-5 text-center rounded">
+        <input type="checkbox" name="packwatch2" id="cb_packwatch2" class="packwatchCB"><label for="cb_packwatch2"><div id="packwatch2" class="packwatch goal-item">JOE BRANDON</div></label>
+        <input type="checkbox" name="packwatch3" id="cb_packwatch3" class="packwatchCB"><label for="cb_packwatch3"><div id="packwatch3" class="packwatch goal-item">NANCY PELOSI</div></label>
+        <input type="checkbox" name="packwatch4" id="cb_packwatch4" class="packwatchCB"><label for="cb_packwatch4"><div id="packwatch4" class="packwatch goal-item">MITCH MCCONNEL (ALREADY DEAD)</div></label>
+        <input type="checkbox" name="packwatch1" id="cb_packwatch1" class="packwatchCB"><label for="cb_packwatch1"><div id="packwatch1" class="packwatch goal-item">RFK DIES IN A VERY WEIRD WAY WHERE IT TAKES A LONG TIME TO FIGURE OUT WHAT DID IT (JOKE PREDICTION)</div></label>
+        <div class="section-header">
+            <h2>PACKWATCH</h2>
+            <span class="packwatch-counter"></span>/4
+        </div>
     </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js" integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y" crossorigin="anonymous"></script>
     <script>
-$(".goal-item").click(function(){
-    $(this).toggleClass("checked");
-
-    let category = $(this).prop("id").replace(/\d/g,'');
-    let count = $(".checked." + category).length;
-
-    $(".completed-" + category).html(count);
-});
     </script>
 </body>
 </html>
